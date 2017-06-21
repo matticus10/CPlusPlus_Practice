@@ -37,6 +37,7 @@ void PlayGame()
 		cout << "Your guess was: " << Guess << endl;
 		cout << endl;
 	}
+	return;
 }
 
 string GetGuess()
