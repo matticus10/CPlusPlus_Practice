@@ -11,9 +11,13 @@ int main()
 {
 	PrintIntro();
 	
-	GetGuessAndPrintBack();
-
-	cout << endl;
+	// loop for the number of turns asking for guesses
+	constexpr int NUMBER_OF_TURNS = 5;
+	for (int i = 1; i <= NUMBER_OF_TURNS; i++)
+	{
+		GetGuessAndPrintBack();
+	}
+	
 	return 0;
 }
 
@@ -36,5 +40,6 @@ string GetGuessAndPrintBack()
 
 	// print the guess back to them
 	cout << "Your guess was: " << Guess << endl;
+	cout << endl;
 	return Guess;
 }
