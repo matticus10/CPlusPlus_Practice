@@ -12,7 +12,7 @@ void FBullCowGame::Reset()
 {
 	const FString HIDDEN_WORD = "planet";
 	
-	MyMaxTries = MyHiddenWord.length(); // number of tries equals number of letters in hidden word
+	MyMaxTries = GetHiddenWordLength(); // number of tries equals number of letters in hidden word
 	MyHiddenWord = HIDDEN_WORD;
 	MyCurrentTry = 1;
 	return;
@@ -23,9 +23,24 @@ bool FBullCowGame::IsGameWon() const
 	return false;
 }
 
-bool FBullCowGame::CheckGuessValidity(FString) const
+EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 {
-	return false;
+	if (false) // if the guess isn't an isogram
+	{
+		return EGuessStatus::Not_Isogram;
+	}
+	else if (false) // if the guess isn't all lower case
+	{
+		return EGuessStatus::Not_Lowercase;
+	}
+	else if (Guess.length() != GetHiddenWordLength()) // if the guess length is wrong
+	{
+		return EGuessStatus::Wrong_Length;
+	}
+	else
+	{
+		return EGuessStatus::OK;
+	}
 }
 
 // recieves a VALID guess, increments turn, and returns count
@@ -38,7 +53,7 @@ FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
 	FBullCowCount BullCowCount;
 
 	// loops through all letters in the guess
-	int32 HiddentWordLength = MyHiddenWord.length();
+	int32 HiddentWordLength = GetHiddenWordLength();
 	for (int32 MHWChar = 0; MHWChar < HiddentWordLength; MHWChar++) 
 	{
 		char GuessLetter = Guess[MHWChar];
