@@ -6,8 +6,6 @@ user interaction. For game logic see the FBullCowGame class.
 #include <iostream>
 #include <string>
 #include "FBullCowGame.h"
-#include <map>
-#define TMap std::map
 
 using FText = std::string;
 using int32 = int;
