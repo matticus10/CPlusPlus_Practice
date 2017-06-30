@@ -28,7 +28,7 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 	{
 		return EGuessStatus::Not_Isogram; //TODO write function
 	}
-	else if (false) // if the guess isn't all lower case
+	else if (!IsLowercase(Guess)) // if the guess isn't all lower case
 	{
 		return EGuessStatus::Not_Lowercase; //TODO write function
 	}
@@ -102,4 +102,16 @@ bool FBullCowGame::IsIsogram(FString Word) const
 	}
 
 	return true; // for example in cases where /0 is entered
+}
+
+bool FBullCowGame::IsLowercase(FString Word) const
+{
+	for (auto Letter : Word)
+	{
+		if (!islower(Letter)) // if not a lowercase letter
+		{
+			return false;
+		}
+	}
+	return true;
 }
