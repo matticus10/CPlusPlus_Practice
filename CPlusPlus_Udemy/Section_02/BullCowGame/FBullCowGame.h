@@ -1,10 +1,14 @@
+/* The game lgic (no view code or direct user interation)
+The game is a simple guess the word game based on MasterMind
+*/
+
 #pragma once
 #include <string>
 
+// to make syntax Unreal friendly
 using FString = std::string;
 using int32 = int;
 
-// all values initialised to zero
 struct FBullCowCount
 {
 	int32 Bulls = 0;
@@ -23,7 +27,7 @@ enum class EGuessStatus
 class FBullCowGame
 {
 public:
-	FBullCowGame();
+	FBullCowGame(); // constructor
 	
 	int32 GetMaxTries() const;
 	int32 GetCurrentTry() const;
