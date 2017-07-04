@@ -54,7 +54,7 @@ void PrintIntro()
 	std::cout << "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << std::endl;
 
 	std::cout << "Can you guess the " << BCGame.GetHiddenWordLength() << " letter isogram I'm thinking of?\n";
-	std::cout << "You have " << BCGame.GetHiddenWordLength() << " tries.\n";
+	std::cout << "You have " << BCGame.GetMaxTries() << " tries.\n";
 	std::cout << std::endl;
 	return;
 }
